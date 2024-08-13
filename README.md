@@ -8,7 +8,7 @@ This is done by reading a riskylab formatted json file or by randomly generating
 
 The battle unit and destination location shall be placed on the board via CLI interaction by the user. If desired those positions can be randomly generated as well.
 
-Once the board and pieces are configured the path will be determined. This is done by a backtracking based path search algorithm. This will systematically locate all paths from the unit to the destination but only record the shortest viable path it detected.
+Once the board and pieces are configured the path will be determined. This is done by a backtracking based path search algorithm. This will systematically locate all paths from the unit to the destination but only record the shortest viable path it detected. This alogrithm while strictly allowing backtracking will generate a distance weight in order to prevent looping in open spaces as well as to prevent exploring too far into areas already known to be longer than previously determined paths.
 
 This application will then output all the x,y coordinates starting with the battle unit and ending with the destination location if a path has been found (in {x,y}, {a,b}, … format). It is possible the unit and/or destination were placed in locations inaccessible to each other which will result in no list of coordinates.
 
